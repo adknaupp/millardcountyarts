@@ -7,60 +7,61 @@ published: true
 
 <div class="container-fluid-kamn">
   <div class="row">
-    <div>
-      <iframe width="100%" height="450px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{ site.google_map }}"></iframe>
-      <br />
-    </div>
     <div class="container">
-      <div class="col-lg-4">
-        <h4>Find us at:</h4>
+      {% assign fb_link = site.facebook_link | strip %}
+      {% if fb_link != '' %}
+      {% unless fb_link contains '://' %}
+      {% assign fb_link = 'https://' | append: fb_link %}
+      {% endunless %}
+      {% endif %}
 
-        <p class="block-author">{{ site.company_name }}</p>
-        <p>{{ site.address_line }}</p>
-        <p>Phone: {{ site.telephone_number }}</p>
-        <p>Fax: {{ site.fax_number }}</p>
+      <div class="row contact-layout">
+        <div class="col-lg-4 col-md-4 col-sm-12 contact-sidebar">
+          <div class="contact-sidebar-content">
+            <h4>Address</h4>
+            <p class="block-author">{{ site.company_name }}</p>
+            <p>{{ site.address_line }}</p>
+            <p>Phone: {{ site.telephone_number }}</p>
+            <p>Email: <a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a></p>
+            <br>
+            <br>
+            <h4>Facebook</h4>
+            {% if fb_link != '' %}
+            <p>
+              <a href="{{ fb_link }}" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/social-icons/facebook.png" alt="Facebook" width="24" height="24">
+                Reach out on Facebook
+              </a>
+            </p>
+            {% else %}
+            <p>Facebook link coming soon.</p>
+            {% endif %}
+          </div>
+        </div>
 
-        <em class="block-author">Email: {{ site.company_email }}</em> <br>
-        <br>
-        <!-- p class="lead">Social Link</p><hr>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-          <a href="#"><img src="assets/img/social-icons/btn_skype.png" alt="Skype"></a>
-          Call us
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <h4>Send an email</h4>
+          <div class="feedback-form">
+            <div id="contact-response"></div>
+            <form action="http://templates.designorbital.com/baleen/contact.php" method="post" id="contact-form">
+              <fieldset>
+                <div class="form-group form-group-fullname">
+                  <label class="control-label" for="fullname">NAME *</label>
+                  <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group form-group-email">
+                  <label class="control-label" for="email">E-MAIL *</label>
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Enter Your E-Mail">
+                </div>
+                <div class="form-group form-group-message">
+                  <label class="control-label" for="message">MESSAGE *</label>
+                  <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </fieldset>
+            </form>
+          </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-          <a href="#"><img src="assets/img/social-icons/btn_facebook.png" alt="Facebook"></a>
-          Like us
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
-          <a href="#"><img src="assets/img/social-icons/btn_twitter.png" alt="Twitter"></a>
-          Follow us
-        </div>
-        <br !-->
-      </div>
-      <div class="col-lg-8">
-        <div class="feedback-form">
-
-          <div id="contact-response"></div>
-          
-          <form action="http://templates.designorbital.com/baleen/contact.php" method="post" id="contact-form">
-            <fieldset>
-              <div class="form-group form-group-fullname">
-                <label class="control-label" for="fullname">NAME *</label>
-                <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter Your Name">
-              </div>
-              <div class="form-group form-group-email">
-                <label class="control-label" for="email">E-MAIL *</label>
-                <input type="text" class="form-control" name="email" id="email" placeholder="Enter Your E-Mail">
-              </div>
-              <div class="form-group form-group-message">
-                <label class="control-label" for="message">MESSAGE *</label>
-                <textarea class="form-control" name="message" id="message" rows="3"></textarea>
-              </div>           
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </fieldset>
-          </form>
-          
-        </div> 
       </div>
     </div>
   </div>
