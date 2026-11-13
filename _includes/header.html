@@ -10,25 +10,25 @@
       <span class="icon-bar"></span>
     </button>
 
-    <a class="navbar-brand wow fadeInDownBig" href="index.html"><img class="office-logo" src="../assets/img/ARTS.png" alt="Millard County Arts"></a>
+    <a class="navbar-brand wow fadeInDownBig" href="{{ '/index.html' | relative_url }}"><img class="office-logo" src="{{ '/assets/img/ARTS.png' | relative_url }}" alt="Millard County Arts"></a>
   </div>
 
   <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav pull-right">
       <li class="active">
-        <a href="/">Home</a>
+        <a href="{{ '/' | relative_url }}">Home</a>
       </li>
       <li>
-        <a href="/about.html">About</a>
+        <a href="{{ '/about.html' | relative_url }}">About</a>
       </li>
       <li>
-        <a href="/blog.html">Blog</a>
+        <a href="{{ '/blog.html' | relative_url }}">Blog</a>
       </li>
       <li>
-        <a href="/team.html">Our People</a>
+        <a href="{{ '/team.html' | relative_url }}">Our People</a>
       </li>
       <li>
-        <a href="/contact.html"><span>Contact</span></a>
+        <a href="{{ '/contact.html' | relative_url }}"><span>Contact</span></a>
       </li>
     </ul>         
   </div>

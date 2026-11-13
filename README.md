@@ -32,4 +32,8 @@ I removed certain features from the original theme packages as we do not really 
 4. Your site should be accessible at `localhost:4000`.
 5. For additional information about Jekyll, refer to the [official website](http://jekyllrb.com/). 
 
+## Publishing
+
+The site is deployed to GitHub Pages by the workflow in `.github/workflows/pages.yml` whenever changes are pushed to `main`. To enable publishing, open the repository's **Settings → Pages** and set the build and deployment source to **GitHub Actions**. The workflow can also be started manually from the **Actions** tab.
+
 ## Enjoy!
